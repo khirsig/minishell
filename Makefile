@@ -16,11 +16,14 @@ D_OBJECTS = $(DEBUGDIR)/*.o
 
 SRC =	./srcs/main.c							\
 		./srcs/signals.c						\
+		./srcs/parsing.c						\
+		./srcs/redirections.c					\
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(LFLAGS) $(OBJECTS) -o $(NAME)
+	stty -echoctl
+	$(CC) $(LFLAGS) $(OBECTS) -o $(NAME)
 
 test: $(D_OBJECTS)
 	$(CC) $(D_OBJECTS) $(LIBFT) -o $(D_NAME)

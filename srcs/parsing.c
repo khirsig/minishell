@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signals.c                                          :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 09:41:11 by pweinsto          #+#    #+#             */
-/*   Updated: 2021/09/30 14:36:22 by pweinsto         ###   ########.fr       */
+/*   Created: 2021/09/30 16:44:43 by pweinsto          #+#    #+#             */
+/*   Updated: 2021/10/01 19:49:32 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../includes/minishell.h"
 
-void	signal_handler(int sig)
+void	specifier(t_struct *vars, char *str)
 {
-	if (sig == SIGINT)
-	{
-		write(1, "\n", 1);
-		rl_on_new_line();
-		rl_replace_line("", 0);
-		rl_redisplay();
-	}
+	output(vars, str);
 }
